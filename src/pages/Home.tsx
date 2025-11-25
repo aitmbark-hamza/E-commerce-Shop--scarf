@@ -16,10 +16,7 @@ const Home = () => {
           alt="Hero Banner"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-          {/* مثال، يمكن تحط عنوان هنا */}
-          {/* <h1 className="text-4xl md:text-6xl font-bold text-white">Scarf Store</h1> */}
-        </div>
+       
       </section>
 
       {/* Welcome Banner Under Hero */}
