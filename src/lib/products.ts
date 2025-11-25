@@ -2,7 +2,14 @@ import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
 import product4 from "@/assets/product-4.jpg";
-
+import product5 from "@/assets/product-5.jpg";
+import product6 from "@/assets/product-6.jpg";
+import product7 from "@/assets/product-7.jpg";
+import product8 from "@/assets/product-8.jpg";
+import product9 from "@/assets/product-9.jpg";
+import product10 from "@/assets/product-10.jpg";
+import product11 from "@/assets/product-11.jpg";
+import product12 from "@/assets/product-12.jpg";
 export interface Product {
   id: number;
   name: string;
@@ -58,7 +65,7 @@ export const products: Product[] = [
     name: "Soft Petal",
     price: 45,
     description: "Winter scarves keep you warm while showing off your fashion sense. Fringed neck scarves.",
-    image: product1,
+    image: product5,
     category: "Clothing",
     inStock: true,
   },
@@ -68,7 +75,7 @@ export const products: Product[] = [
     price: 120,
     salePrice: 99,
     description: "Winter scarves keep you warm while showing off your fashion sense. Fringed neck scarves.",  
-    image: product2,
+    image: product6,
     category: "Footwear",
     inStock: true,
   },
@@ -77,7 +84,7 @@ export const products: Product[] = [
     name: "Mint Whisper",
     price: 85,
     description: "Winter scarves keep you warm while showing off your fashion sense. Fringed neck scarves.",
-    image: product3,
+    image: product7,
     category: "Accessories",
     inStock: true,
   },
@@ -87,7 +94,7 @@ export const products: Product[] = [
     price: 180,
     salePrice: 150,
     description: "Winter scarves keep you warm while showing off your fashion sense. Fringed neck scarves.",
-    image: product4,
+    image: product8,
     category: "Accessories",
     inStock: true,
   },
@@ -97,7 +104,7 @@ export const products: Product[] = [
     price: 45,
     salePrice: 35,
     description: "Winter scarves keep you warm while showing off your fashion sense. Fringed neck scarves.",
-    image: product1,
+    image: product9,
     category: "Clothing",
     inStock: true,
   },
@@ -106,7 +113,7 @@ export const products: Product[] = [
     name: "Baby Pink",
     price: 120,
     description: "Winter scarves keep you warm while showing off your fashion sense. Fringed neck scarves.",
-    image: product2,
+    image: product10,
     category: "Footwear",
     inStock: true,
   },
@@ -116,7 +123,7 @@ export const products: Product[] = [
     price: 85,
     salePrice: 70,
     description: "Winter scarves keep you warm while showing off your fashion sense. Fringed neck scarves.",
-    image: product3,
+    image: product11,
     category: "Accessories",
     inStock: true,
   },
@@ -125,7 +132,7 @@ export const products: Product[] = [
     name: "Lavender Mist",
     price: 180,
     description: "Winter scarves keep you warm while showing off your fashion sense. Fringed neck scarves.",
-    image: product4,
+    image: product12,
     category: "Accessories",
     inStock: true,
   },
