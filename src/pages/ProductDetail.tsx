@@ -1,15 +1,18 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { getProductById } from "@/lib/products";
 import { useCartStore } from "@/lib/cart";
 import { ShoppingCart } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { OrderForm } from "@/components/OrderForm";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { toast } = useToast();
   const addItem = useCartStore((state) => state.addItem);
+  const [isOrderFormOpen, setIsOrderFormOpen] = useState(false);
 
   const product = getProductById(Number(id));
 
@@ -93,6 +96,15 @@ const ProductDetail = () => {
                 <ShoppingCart className="mr-2 h-5 w-5" />
                 Add to Cart
               </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="flex-1"
+                onClick={() => setIsOrderFormOpen(true)}
+                disabled={!product.inStock}
+              >
+                Order Now
+              </Button>
             </div>
 
             <div className="mt-12 pt-12 border-t border-border space-y-4">
@@ -108,6 +120,13 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* Order Form Modal */}
+      <OrderForm
+        productName={product.name}
+        isOpen={isOrderFormOpen}
+        onClose={() => setIsOrderFormOpen(false)}
+      />
     </div>
   );
 };
