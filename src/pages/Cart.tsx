@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useCartStore } from "@/lib/cart";
 import { Minus, Plus, Trash2 } from "lucide-react";
+import { OrderForm } from "@/components/OrderForm";
 
 const Cart = () => {
   const { items, updateQuantity, removeItem, getTotalPrice } = useCartStore();
+  const [isOrderFormOpen, setIsOrderFormOpen] = useState(false);
 
   if (items.length === 0) {
     return (
@@ -119,8 +122,13 @@ const Cart = () => {
                 </div>
               </div>
 
-              <Button className="w-full mb-4" size="lg">
-                Proceed to Checkout
+              <Button 
+                className="w-full mb-4" 
+                size="lg"
+                onClick={() => setIsOrderFormOpen(true)}
+                disabled={items.length === 0}
+              >
+                Order Now
               </Button>
               
               <Link to="/products">
@@ -132,6 +140,13 @@ const Cart = () => {
           </div>
         </div>
       </div>
+
+      {/* Order Form Modal */}
+      <OrderForm
+        productName={items.length > 0 ? `${items.length} item(s) in cart` : "Order"}
+        isOpen={isOrderFormOpen}
+        onClose={() => setIsOrderFormOpen(false)}
+      />
     </div>
   );
 };
